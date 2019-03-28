@@ -1,6 +1,10 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container">
+  <text>您可以编辑转发内容的标题</text>
+  <view class='section'>
+    <input placeholder='第一推理培训' />
+  </view>
+  <view class="btn-area">
+    <button open-type='share' type='primary' bindtouchend='touchShare' bindtouchstart='touchStart'>分享</button>
+  </view>
 </view>

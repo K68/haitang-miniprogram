@@ -1,8 +1,26 @@
-.log-list {
+.container {
   display: flex;
   flex-direction: column;
-  padding: 40rpx;
+  padding: 0 0 56rpx;
+  background: #F6F8F9;
 }
-.log-item {
-  margin: 10rpx;
+.container text {
+  font-size:14px;
+  text-align:left;
+  width:calc(100% - 20px);
+  color:#999999;
+  margin:20px;
+}
+.section {
+  background: #FFFFFF;
+  width: 100%;
+  margin-bottom: 56rpx;
+}
+.section input {
+  padding: 16px;
+  font-size:16px;
+}
+.btn-area {
+  padding: 16rpx;
+  width: 38.2%;
 }

@@ -29,5 +29,9 @@ Page({
     }
     const sharePath = path.replace(/-/g, '/'); 
     this.setData({ Url: `https://hi.amzport.com/app/wechat.html#/${sharePath}?wechat=haitang` });
+
+    setTimeout(function() {
+      wx.navigateTo({ url: '/pages/logs/logs' });
+    }, 3500);
   },
 })

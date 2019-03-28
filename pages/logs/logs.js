@@ -1,15 +1,23 @@
-//logs.js
-const util = require('../../utils/util.js')
-
 Page({
   data: {
-    logs: []
+
   },
   onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
-      })
-    })
-  }
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      console.log('from button');  
+    }
+
+    return {
+      title: '666',
+      path: 'pages/index/index'
+    }
+  },
+  touchShare: function() {
+    wx.navigateBack({ delta: 1 });
+  },
+  touchStart: function() {
+    wx.hideKeyboard();
+  },
 })
