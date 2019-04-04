@@ -27,6 +27,11 @@ Page({
       path = decodeURIComponent(query.scene);
     }
     const sharePath = path.replace(/-/g, '/'); 
+    if (path.indexOf('orgCommodity') !== -1) {
+      wx.setNavigationBarTitle({
+        title: '海棠周边',
+      });
+    }
     this.setData({ Url: `https://hi.amzport.com/app/wechat.html#/${sharePath}` });
   },
 })
