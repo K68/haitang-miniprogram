@@ -6,7 +6,6 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: shareValue.title,
-      imageUrl: shareValue.imageUrl,
       path: `pages/index/index?p=${shareValue.path}`,
       success: function (res) {
         // 转发成功
@@ -28,10 +27,6 @@ Page({
       path = decodeURIComponent(query.scene);
     }
     const sharePath = path.replace(/-/g, '/'); 
-    this.setData({ Url: `https://hi.amzport.com/app/wechat.html#/${sharePath}?wechat=haitang` });
-
-    setTimeout(function() {
-      wx.navigateTo({ url: '/pages/logs/logs' });
-    }, 3500);
+    this.setData({ Url: `https://hi.amzport.com/app/wechat.html#/${sharePath}` });
   },
 })

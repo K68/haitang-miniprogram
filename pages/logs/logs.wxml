@@ -1,8 +1,11 @@
 <!--logs.wxml-->
 <view class="container">
+  <view style="width:100%">
+    <official-account></official-account>
+  </view>
   <text>您可以编辑转发内容的标题</text>
   <view class='section'>
-    <input placeholder='第一推理培训' />
+    <input bindinput="bindKeyInput" value="{{Title}}" />
   </view>
   <view class="btn-area">
     <button open-type='share' type='primary' bindtouchend='touchShare' bindtouchstart='touchStart'>分享</button>

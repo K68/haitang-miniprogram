@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.2",
+	"libVersion": "2.6.4",
 	"appid": "wxb8b0c1f92e81bfe1",
 	"projectname": "haitang1",
 	"debugOptions": {
@@ -28,13 +28,25 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "666",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1047"
+				}
+			]
 		}
 	}
 }
