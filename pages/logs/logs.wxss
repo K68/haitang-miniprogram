@@ -24,3 +24,23 @@
   padding: 16rpx;
   width: 38.2%;
 }
+
+.contact {
+    text-align:center;
+    padding:56rpx 0;
+    background:#F6F8F9;
+    position:fixed;
+    bottom:0px;
+    width:100%;
+}
+
+ .contact span{
+  vertical-align: top;
+  line-height: 46px;
+}
+
+.contactButton {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 24px;
+}

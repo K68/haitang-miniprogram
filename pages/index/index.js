@@ -32,6 +32,6 @@ Page({
         title: '海棠周边',
       });
     }
-    this.setData({ Url: `https://hi.amzport.com/app/wechat.html#/${sharePath}` });
+    this.setData({ Url: `https://hi.amzport.com/app/weChat.html#${sharePath}` });
   },
 })

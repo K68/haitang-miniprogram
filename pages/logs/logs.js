@@ -10,12 +10,17 @@ Page({
     });
     logPath = option.path;
   },
+  onHide() { 
+  
+  },
   bindKeyInput(e) {
     this.setData({
       Title: e.detail.value
     })
   },
   onShareAppMessage: function (res) {
+    wx.navigateBack({ delta: 1 });
+
     if (res.from === 'button') {
       console.log('from button');  
     }
@@ -24,9 +29,6 @@ Page({
       title: this.data.Title,
       path: `pages/index/index?p=${logPath}`,
     }
-  },
-  touchShare: function() {
-    wx.navigateBack({ delta: 1 });
   },
   touchStart: function() {
     wx.hideKeyboard();

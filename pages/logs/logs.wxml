@@ -8,6 +8,10 @@
     <input bindinput="bindKeyInput" value="{{Title}}" />
   </view>
   <view class="btn-area">
-    <button open-type='share' type='primary' bindtouchend='touchShare' bindtouchstart='touchStart'>分享</button>
+    <button open-type='share' type='primary' bindtouchstart='touchStart'>分享</button>
   </view>
+<view class="contact">
+<span>我要入驻</span>
+<button class="contactButton" open-type='contact'>联系客服</button>
+</view>
 </view>
