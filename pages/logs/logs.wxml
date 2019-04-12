@@ -3,15 +3,26 @@
   <view style="width:100%">
     <official-account></official-account>
   </view>
-  <text>您可以编辑转发内容的标题</text>
+  <text style="margin: 12px">您可以编辑转发内容的标题</text>
   <view class='section'>
     <input bindinput="bindKeyInput" value="{{Title}}" />
   </view>
+  <image
+    style="width: 200px; height: 200px; background-color: #eeeeee;margin-bottom: 12px"
+    src="{{Src}}"
+  ></image>
   <view class="btn-area">
-    <button open-type='share' type='primary' bindtouchstart='touchStart'>分享</button>
+    <button open-type='share' type='primary' bindtouchend='touchShare' bindtouchstart='touchStart'>转发</button>
   </view>
-<view class="contact">
-<span>我要入驻</span>
-<button class="contactButton" open-type='contact'>联系客服</button>
-</view>
+  <div style="width:100%;overflow:auto">
+    <canvas canvas-id="shareCanvas" style="width:{{CanvasWidth}}px;height:{{CanvasHeight}}px;margin: 12px auto;background: #fff"></canvas>
+  </div>
+  <view style="display: flex; width: 90%; background: #fff; padding: 5%">
+    <button type='primary' bindtouchend='openImg'>生成分享图</button>
+    <button disabled="{{ImgLoad}}" type='primary' bindtouchend='saveImg'>保存到相册</button>
+  </view>
+  <view class="contact">
+    <span>我要入驻</span>
+    <button class="contactButton" open-type='contact'>联系客服</button>
+  </view>
 </view>

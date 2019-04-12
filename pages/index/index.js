@@ -23,8 +23,11 @@ Page({
 
   onLoad: function (query) {
     let path = query.p || '';
+    let apply = '';
     if (query.scene) {
-      path = decodeURIComponent(query.scene);
+      const scene = decodeURIComponent(query.scene);
+      path = '-' + scene.split('#')[0];
+      apply = `?apply=${scene.split('#')[1]}/`;
     }
     const sharePath = path.replace(/-/g, '/'); 
     if (path.indexOf('orgCommodity') !== -1) {
@@ -32,6 +35,6 @@ Page({
         title: '海棠周边',
       });
     }
-    this.setData({ Url: `https://hi.amzport.com/app/weChat.html#${sharePath}` });
+    this.setData({ Url: `https://hi.amzport.com/app/weChat.html?789${apply}#${sharePath}` });
   },
 })

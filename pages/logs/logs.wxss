@@ -1,8 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 0 0 56rpx;
   background: #F6F8F9;
+  padding: 0px;
 }
 .container text {
   font-size:14px;
@@ -28,8 +28,7 @@
 .contact {
     text-align:center;
     padding:56rpx 0;
-    background:#F6F8F9;
-    position:fixed;
+    background:#fff;
     bottom:0px;
     width:100%;
 }
@@ -43,4 +42,35 @@
   vertical-align: top;
   display: inline-block;
   margin-left: 24px;
+}
+
+.wechatScan {
+  position: relative;
+  min-height: 180px; 
+  padding: 0px 16px;
+}
+
+.logoSy {
+  width: 76px;
+  height: 76px;
+  position: absolute;
+  left: calc(50% - 37px);
+  top: calc(50% - 37px);
+  background: #fff;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.spanCodeSy {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 3px;
+  margin: auto;
+  width: 172px;
+  display: block;
+  text-align: center;
+}
+
+.spanCodeSy sapn {
+      color: #222;
 }
