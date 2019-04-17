@@ -120,7 +120,9 @@ Page({
           x: 0,
           y: 0,
           width: that.data.CanvasWidth,
-          height: that.data.CanvaHeight,
+          height: that.data.CanvasHeight,
+          destWidth: that.data.CanvasWidth,
+          destHeight: that.data.CanvasHeight,
           canvasId: 'shareCanvas',
           success: function (res) {
             that.setData({

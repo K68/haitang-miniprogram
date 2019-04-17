@@ -26,7 +26,7 @@ Page({
     let apply = '';
     if (query.scene) {
       const scene = decodeURIComponent(query.scene);
-      path = '-' + scene.split('#')[0];
+      path = scene.split('#')[0];
       apply = `?apply=${scene.split('#')[1]}/`;
     }
     const sharePath = path.replace(/-/g, '/'); 
@@ -35,6 +35,6 @@ Page({
         title: '海棠周边',
       });
     }
-    this.setData({ Url: `https://hi.amzport.com/app/weChat.html${apply}#${sharePath}` });
+    this.setData({ Url: `https://hi.amzport.com/app/weChat.html${apply}#/${sharePath}` });
   },
 })
