@@ -22,7 +22,7 @@ Page({
   },
 
   onLoad: function (query) {
-    let path = query.p || '-';
+    let path = query.p || '';
     let apply = '';
     if (query.scene) {
       const scene = decodeURIComponent(query.scene);

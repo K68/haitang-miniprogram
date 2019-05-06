@@ -42,9 +42,9 @@
 				{
 					"id": 0,
 					"name": "666",
-					"pathName": "pages/index/index",
+					"pathName": "pages/story/story",
 					"query": "",
-					"scene": "1047"
+					"scene": 1047
 				}
 			]
 		}
