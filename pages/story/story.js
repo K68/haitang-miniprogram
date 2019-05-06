@@ -7,7 +7,7 @@ Page({
       path = scene;
     }
     if (path.indexOf('story') !== -1) {
-      this.setData({ storyUrl: `https://hi.amzport.com/story/${path.split('story-')[1]}/` });
+      this.setData({ storyUrl: `https://hi.amzport.com/story/${path.split('story-')[1]}/?om=${query.scene ? 's' : 'p'}` });
     } else if (query.p && !query.scene) {
       wx.navigateBack();
     } else {
