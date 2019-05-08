@@ -29,6 +29,11 @@ Page({
       path = scene.split('#')[0];
       apply = `?apply=${scene.split('#')[1]}/`;
     }
+    if (path.indexOf('story-') !== -1) {
+      wx.redirectTo({ // eslint-disable-line
+        url: `/pages/story/story?p=${path}`,
+      });
+    }
     const sharePath = path.replace(/-/g, '/'); 
     if (path.indexOf('orgCommodity') !== -1) {
       wx.setNavigationBarTitle({

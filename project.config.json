@@ -12,7 +12,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.4",
+	"libVersion": "2.6.6",
 	"appid": "wxb8b0c1f92e81bfe1",
 	"projectname": "haitang1",
 	"debugOptions": {
@@ -43,8 +43,9 @@
 					"id": 0,
 					"name": "666",
 					"pathName": "pages/story/story",
-					"query": "",
-					"scene": 1047
+					"query": "p=story-486",
+					"scene": 1036,
+					"referrerInfo": {}
 				}
 			]
 		}
