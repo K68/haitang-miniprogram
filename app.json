@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/loc/loc",
+    "pages/prize/prize",
     "pages/story/story"
   ],
   "window":{

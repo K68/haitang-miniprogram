@@ -1,0 +1,33 @@
+.contactButton {
+  vertical-align: top;
+  display: inline-block;
+  margin-left: 24px;
+}
+.contact {
+    text-align:center;
+    padding:56rpx 0;
+    background:#fff;
+    bottom:0px;
+    width:100%;
+    margin-top: 12px;
+    font-size: 16px;
+}
+.section {
+  background: #FFFFFF;
+  width: 100%;
+  margin-bottom: 56rpx;
+}
+.section input {
+  padding: 16px;
+  font-size:16px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #F6F8F9;
+  padding: 0px;
+}
+.btn-area {
+  padding: 16rpx;
+  width: 38.2%;
+}

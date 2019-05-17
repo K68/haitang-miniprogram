@@ -1,0 +1,19 @@
+<!--logs.wxml-->
+<view class="container">
+  <text style="margin: 12px">优惠码</text>
+  <view class='section'>
+    <input placeholder="请输入优惠码进行校验" bindinput="bindKeyInput" value="{{Code}}" />
+  </view>
+  <view class="btn-area" style='display: {{NoticeShow}}'>
+    <button type='primary' bindtouchend='touchApply'>校验</button>
+  </view>
+  <view class="contact" style='display: {{NoticeShow}}'>
+  <div>{{Notice}}</div>
+  </view>
+  <view class="contact" style='display: {{SucessShow}}'>
+    <div>优惠码有效，请联系客服进行兑换</div>
+  </view>
+  <view class="btn-area" style='display: {{SucessShow}}; margin: 12px 0'>
+    <button type='primary' open-type='contact' send-message-title="海棠客服我要兑换奖品" send-message-path='pages/prize/prize' send-message-img='' show-message-card='true'>联系客服</button>
+  </view>
+</view>
