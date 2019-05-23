@@ -1,7 +1,9 @@
 Page({
   
   onLoad(option) {
-    wx.navigateBack();
+    setTimeout(() => {
+      wx.navigateBack();
+    }, 500);
     wx.openLocation({
       latitude: parseFloat(option.lat),
       longitude: parseFloat(option.lng),

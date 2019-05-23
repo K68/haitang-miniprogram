@@ -4,8 +4,8 @@ Page({
   data: {
     Code: '', //学堂名称
     Notice: '请输入优惠码进行校验',
-    NoticeShow: 'none',
-    SucessShow: '',
+    NoticeShow: '',
+    SucessShow: 'none',
   },
 
   onLoad: function (query) {
@@ -40,13 +40,13 @@ Page({
           const cheap = jsList[1];
           const info = jsList[0][0];
           const newTime = new Date().getTime();
-          const cgTime = new Date(cheap.adExtra.cgUserTime).getTime();
+          const cgTime = new Date(info.cgUseTime).getTime();
           const hourTime = 60 * 60 * 1000;
           if (cheap.adRank !== 2) {
             Notice = '无奖品';
           } else if (info.cgGrant) {
             Notice = '已领取奖品';
-          } else if (!cheap.adExtra.cgUserTime) {
+          } else if (!info.cgUseTime) {
             Notice = '还没核销，请让商家配合操作';
           } else if ((cgTime + cheap.adExtra.gainDate * hourTime) < newTime) {
             Notice = `未到有效期，还剩余${parseInt((newTime - cgTime) / hourTime - cheap.gainDate.cgGainDate, 10)}小时`;
