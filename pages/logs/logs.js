@@ -27,6 +27,7 @@ Page({
   },
   
   onLoad(option) {
+    console.log(option);
     this.setData({
       Title: decodeURIComponent(option.title),
       top: parseInt(option.top || 0, 10),

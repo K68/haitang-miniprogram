@@ -37,15 +37,14 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "666",
-					"pathName": "pages/prize/prize",
+					"pathName": "pages/ruzhu/ruzhu",
 					"query": "",
-					"scene": 1036,
-					"referrerInfo": {}
+					"scene": 1012
 				}
 			]
 		}

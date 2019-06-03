@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/loc/loc",
     "pages/prize/prize",
-    "pages/story/story"
+    "pages/story/story",
+    "pages/ruzhu/ruzhu"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -27,7 +27,9 @@ Page({
     if (query.scene) {
       const scene = decodeURIComponent(query.scene);
       path = scene.split('#')[0];
-      apply = `?apply=${scene.split('#')[1]}/`;
+      if (scene.split('#')[1]) {
+        apply = `?apply=${scene.split('#')[1]}/`;
+      }
     }
     if (path.indexOf('story-') !== -1) {
       wx.redirectTo({ // eslint-disable-line
