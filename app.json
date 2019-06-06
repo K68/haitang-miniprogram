@@ -5,7 +5,8 @@
     "pages/loc/loc",
     "pages/prize/prize",
     "pages/story/story",
-    "pages/ruzhu/ruzhu"
+    "pages/ruzhu/ruzhu",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",
