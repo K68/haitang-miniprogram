@@ -1,0 +1,19 @@
+<!--logs.wxml-->
+<view  wx:if="{{Status}}">
+  <view class="container">
+    <button style='margin: auto' type='primary' class='wxlogin' wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="wxLogin">微信登录</button>
+    <view wx:else>请升级微信版本</view>
+  </view>
+  <view class="container">
+    <button style='margin: auto' bindtouchend='toLogin'>手机号登录</button>
+  </view>
+</view>
+<view wx:else >
+  <view class="container">
+    <text style="margin: 12px;font-size:14px;">为了更好的服务，我们需要关联你的手机号</text>
+    <button style='margin: auto' type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取微信手机号</button>
+  </view>
+  <view class="container">
+    <button style='margin: auto' bindtouchend='toRegister'>手动输入手机号</button>
+  </view>
+</view>
