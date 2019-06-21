@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0px; 
+  height: auto;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.payMoney {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.payButton {
+  width: 90%;
+}
+
+.section {
+  width: 100%;
+  background: #ffffff;
+  padding: 16px 0px;
+  margin: 16px 0px;
+  font-size: 14px;
+  display: flex;
+}
+
+
+.sectionDiv {
+  flex: 1;
+  padding-right: 16px;
+  text-align: right;
+}
+
+.sectionSpan {
+  padding-left: 16px;
+  color: #5A5A5A;
+}

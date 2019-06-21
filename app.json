@@ -6,7 +6,8 @@
     "pages/prize/prize",
     "pages/story/story",
     "pages/ruzhu/ruzhu",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/pay/pay"
   ],
   "window":{
     "backgroundTextStyle":"light",

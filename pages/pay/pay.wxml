@@ -1,0 +1,11 @@
+<view style='background: #F6F8F9;height: 100vh'>
+  <view class="container">
+    <span class='title'>{{Title}}</span>
+    <span class='payMoney'>¥ {{Money}}</span>
+    <view class='section'>
+      <span class='sectionSpan'>收款方</span>
+      <div class='sectionDiv'>奇佑海棠</div>
+    </view>
+    <button class='payButton' type='primary' bindtouchend='toLogin'>立即支付</button>
+  </view>
+</view>

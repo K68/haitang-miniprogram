@@ -6,6 +6,8 @@ Page({
     pePic: '',
     openid: '',
     wCode: '',
+    peUnionid: '',
+    regStep: 0,
   },
 
   onLoad: function (query) {
@@ -26,19 +28,35 @@ Page({
           openid: that.data.openid,
           encryptedData: e.detail.encryptedData,
           iv: e.detail.iv,
+          sCode: that.data.regStep,
         },
         header: {
           'content-type': 'application/json'
         },
         success: function (userInfo) {
-          console.log(userInfo);
-          const value = {
-            path: '注册',
-            phoneNumber: userInfo.data.data.phoneNumber,
-            PeName: that.data.PeName,
-            pePic: that.data.pePic,
-          };
-          console.log(value)
+          const token = userInfo.header['X-Auth-Token'];
+          if (token) {
+            let value = {};
+            if (userInfo.data.code === 7 || userInfo.data.code === 13) {
+              value = {
+                path: '修改手机号',
+                token,
+              };
+            } else {
+              value = {
+                path: '自动登录',
+                token,
+              };
+            }
+          } else {
+            value = {
+              path: '注册',
+              phoneNumber: userInfo.data.data.phoneNumber,
+              PeName: that.data.PeName,
+              pePic: that.data.pePic,
+              peUnionid: that.data.peUnionid,
+            };
+          }
           wx.request({
             url: 'https://hi.amzport.com/api/weChat/setWCode',
             method: 'POST',
@@ -49,7 +67,6 @@ Page({
             header: {
               'content-type': 'application/json'
             },
-            success: function () {}
           })
         }
       })
@@ -58,6 +75,7 @@ Page({
         path: '注册',
         PeName: this.data.PeName,
         pePic: this.data.pePic,
+        peUnionid: this.data.peUnionid,
       };
       wx.request({
         url: 'https://hi.amzport.com/api/weChat/setWCode',
@@ -99,6 +117,7 @@ Page({
       path: '注册',
       PeName: this.data.PeName,
       pePic: this.data.pePic,
+      peUnionid: this.data.peUnionid,
     };
     wx.request({
       url: 'https://hi.amzport.com/api/weChat/setWCode',
@@ -132,16 +151,34 @@ Page({
             success: function (session) {
               const status = session.data.data;
               const openid = session.header['openid'];
-              if (status < 0) {
+              const token = session.header['X-Auth-Token'];
+              that.setData({
+                openid,
+              })
+              if (token) {
+                const value = {
+                  path: '自动登录',
+                  token,
+                };
+                wx.request({
+                  url: 'https://hi.amzport.com/api/weChat/setWCode',
+                  method: 'POST',
+                  data: {
+                    wCode: that.data.wCode,
+                    wValue: JSON.stringify(value),
+                  },
+                  header: {
+                    'content-type': 'application/json'
+                  },
+                })
+                wx.navigateBack();
+              } else if (status < 0) {
                   wx.showToast({
                     title: '接口错误请重试',
                     icon: 'none',
                     duration: 2000,
                   });
               } else if (status === 0) {
-                  that.setData({
-                    Status: false,
-                  })
                   wx.getSetting({
                     success(info) {
                       if (info.authSetting['scope.userInfo']) {
@@ -151,21 +188,45 @@ Page({
                             that.setData({
                               PeName: info.userInfo.nickName,
                               pePic: info.userInfo.avatarUrl,
-                              openid,
                             })
                             wx.request({
-                              url: 'https://hi.amzport.com/api/weChat/getWchatLoginInfo', //接口名称
+                              url: 'https://hi.amzport.com/api/weChat/getWchatLoginInfo', //解密微信用户信息
                               method: 'POST',
                               data: {
                                 openid,
                                 encryptedData: info.encryptedData,
                                 iv: info.iv,
+                                sCode: session.data.data,
                               },
                               header: {
                                 'content-type': 'application/json'
                               },
                               success: function (userInfo) {
-                                console.log(userInfo);
+                                const token = userInfo.header['X-Auth-Token'];
+                                if (token) {
+                                  const value = {
+                                    path: '自动登录',
+                                    token,
+                                  };
+                                  wx.request({
+                                    url: 'https://hi.amzport.com/api/weChat/setWCode',
+                                    method: 'POST',
+                                    data: {
+                                      wCode: that.data.wCode,
+                                      wValue: JSON.stringify(value),
+                                    },
+                                    header: {
+                                      'content-type': 'application/json'
+                                    },
+                                  })
+                                  wx.navigateBack();
+                                } else {
+                                  that.setData({
+                                    peUnionid: userInfo.data.data.unionid,
+                                    regStep: userInfo.data.data.ssCode,
+                                    Status: false,
+                                  })
+                                }
                               }
                             })
                           }
@@ -173,8 +234,11 @@ Page({
                       }
                     }
                   })
-              } else if (status === 1) {
-                // 微信登录成功
+              } else if (status === 1 || status === 2) { // 获取手机号
+                that.setData({
+                  regStep: status,
+                  Status: false,
+                })
               } else {
                 wx.showToast({
                   title: '接口错误请重试' + status,
