@@ -6,6 +6,6 @@
       <span class='sectionSpan'>收款方</span>
       <div class='sectionDiv'>奇佑海棠</div>
     </view>
-    <button class='payButton' type='primary' bindtouchend='toLogin'>立即支付</button>
+    <button class='payButton' type='primary' bindtouchend='toPay' open-type="getUserInfo">立即支付</button>
   </view>
 </view>

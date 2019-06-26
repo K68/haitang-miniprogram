@@ -154,7 +154,7 @@ Page({
               const token = session.header['X-Auth-Token'];
               that.setData({
                 openid,
-              })
+              });
               if (token) {
                 const value = {
                   path: '自动登录',
@@ -180,8 +180,8 @@ Page({
                   });
               } else if (status === 0) {
                   wx.getSetting({
-                    success(info) {
-                      if (info.authSetting['scope.userInfo']) {
+                    success(setInfo) {
+                      if (setInfo.authSetting['scope.userInfo']) {
                         wx.getUserInfo({
                           withCredentials: true,
                           success: function (info) {
