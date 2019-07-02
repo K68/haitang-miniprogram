@@ -42,9 +42,9 @@
 				{
 					"id": 0,
 					"name": "666",
-					"pathName": "pages/login/login",
+					"pathName": "pages/pay/pay",
 					"query": "",
-					"scene": 1012
+					"scene": 1001
 				}
 			]
 		}

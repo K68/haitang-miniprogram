@@ -15,10 +15,10 @@ Page({
       this.setData({
         Title: decodeURIComponent(option.title),
         Money: parseFloat(option.money),
-        detail: parseFloat(option.detail || ''),
-        attach: parseFloat(option.attach || ''),
+        detail: decodeURIComponent(option.detail || ''),
+        attach: decodeURIComponent(option.attach || ''),
         adid: option.adid || null,
-        leid: option.leid || null,
+        scid: option.scid || null,
         token: option.token || '',
       });
       wx.login({
@@ -57,7 +57,7 @@ Page({
           openid: that.data.openid,
           detail: that.data.detail,
           attach: that.data.attach,
-          adid: that.data.adid,
+          adid: parseInt(that.data.adid,10),
           spbillCreateIp: '39.188.212.16',
         },
         header: {
